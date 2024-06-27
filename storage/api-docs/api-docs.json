@@ -5,10 +5,10 @@
         "version": "0.1"
     },
     "paths": {
-        "/api/users": {
+        "/api/test": {
             "get": {
                 "tags": [
-                    "user"
+                    "test"
                 ],
                 "summary": "get all users",
                 "operationId": "index",
@@ -20,7 +20,7 @@
             },
             "post": {
                 "tags": [
-                    "user"
+                    "test"
                 ],
                 "summary": "create user",
                 "operationId": "store",
@@ -51,10 +51,10 @@
                 }
             }
         },
-        "/api/users/{id}": {
+        "/api/test/{id}": {
             "get": {
                 "tags": [
-                    "user"
+                    "test"
                 ],
                 "summary": "show user",
                 "operationId": "show",
@@ -85,7 +85,7 @@
             },
             "put": {
                 "tags": [
-                    "user"
+                    "test"
                 ],
                 "summary": "edit user data",
                 "operationId": "update",
@@ -128,7 +128,7 @@
             },
             "delete": {
                 "tags": [
-                    "user"
+                    "test"
                 ],
                 "summary": "remove user",
                 "operationId": "destroy",
