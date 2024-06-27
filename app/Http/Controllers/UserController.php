@@ -12,15 +12,15 @@ use Illuminate\Support\Facades\Validator;
  */
 class UserController extends Controller
 {
-    /**
-     * @OA\Get(
-     *     path="/api/users",
-     *     tags={"user"},
-     *     summary="get all users",
-     *     operationId="index",
-     *     @OA\Response(response="200", description="get all users.")
-     * )
-     */
+//    /**
+//     * @OA\Get(
+//     *     path="/api/users",
+//     *     tags={"user"},
+//     *     summary="get all users",
+//     *     operationId="index",
+//     *     @OA\Response(response="200", description="get all users.")
+//     * )
+//     */
     public function index(): \Illuminate\Database\Eloquent\Collection
     {
         return User::all();
