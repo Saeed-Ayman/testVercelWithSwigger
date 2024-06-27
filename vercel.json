@@ -10,8 +10,12 @@
     },
     "routes": [
         {
+            "src": "/build/(.*)",
+            "dest": "/build/$1"
+        },
+        {
             "src": "/(.*)",
-            "dest": "/api/index.php"
+            "dest": "/public/index.php"
         }
     ],
     "outputDirectory": "public"
