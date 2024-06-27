@@ -7,43 +7,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 
-/**
- * @OA\Info(title="User Controller", version="0.1")
- */
 class UserController extends Controller
 {
-//    /**
-//     * @OA\Get(
-//     *     path="/api/users",
-//     *     tags={"user"},
-//     *     summary="get all users",
-//     *     operationId="index",
-//     *     @OA\Response(response="200", description="get all users.")
-//     * )
-//     */
     public function index(): \Illuminate\Database\Eloquent\Collection
     {
         return User::all();
     }
 
-    /**
-     * @OA\Get(
-     *     path="/api/users/{id}",
-     *     tags={"user"},
-     *     summary="show user",
-     *     operationId="show",
-     *     @OA\Parameter(
-     *          in="path",
-     *          name="id",
-     *          required=true,
-     *     ),
-     *     @OA\Response(response="200", description="successful operation"),
-     *     @OA\Response(response="401", description="unautharize"),
-     *     @OA\Response(response="403", description="forbidden operation"),
-     *     @OA\Response(response="404", description="user not found"),
-     *     @OA\Response(response="422", description="unprocessable entity")
-     * )
-     */
     public function show(Request $request, $id)
     {
         $user = User::all()->where('id', $id)->first();
@@ -58,29 +28,6 @@ class UserController extends Controller
         ]);
     }
 
-    /**
-     * @OA\Post(
-     *     path="/api/users",
-     *     tags={"user"},
-     *     summary="create user",
-     *     operationId="store",
-     *     @OA\Parameter(
-     *          name="name",
-     *          in="query"
-     *      ),
-     *     @OA\Parameter(
-     *           name="email",
-     *           in="query"
-     *       ),
-     *     @OA\Parameter(
-     *            name="password",
-     *           in="query"
-     *      ),
-     *     @OA\Response(response="200", description="successful operation"),
-     *     @OA\Response(response="403", description="forbidden operation"),
-     *     @OA\Response(response="422", description="unprocessable entity")
-     * )
-     */
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -101,36 +48,6 @@ class UserController extends Controller
         ]);
     }
 
-    /**
-     * @OA\Put(
-     *     path="/api/users/{id}",
-     *     tags={"user"},
-     *     summary="edit user data",
-     *     operationId="update",
-     *     @OA\Parameter(
-     *          in="path",
-     *          name="id",
-     *          required=true,
-     *     ),
-     *     @OA\Parameter(
-     *          name="name",
-     *          in="query"
-     *      ),
-     *     @OA\Parameter(
-     *           name="email",
-     *           in="query"
-     *       ),
-     *     @OA\Parameter(
-     *            name="password",
-     *           in="query"
-     *      ),
-     *     @OA\Response(response="200", description="successful operation"),
-     *     @OA\Response(response="401", description="unautharize"),
-     *     @OA\Response(response="403", description="forbidden operation"),
-     *     @OA\Response(response="404", description="user not found"),
-     *     @OA\Response(response="422", description="unprocessable entity")
-     * )
-     */
     public function update(Request $request, $id)
     {
         $user = User::all()->where('id', $id)->first();
@@ -161,28 +78,6 @@ class UserController extends Controller
         ]);
     }
 
-    /**
-     * @OA\Delete(
-     *     path="/api/users/{id}",
-     *     tags={"user"},
-     *     summary="remove user",
-     *     operationId="destroy",
-     *     @OA\Parameter(
-     *          in="path",
-     *          name="id",
-     *          required=true,
-     *     ),
-     *      @OA\Parameter(
-     *             name="password",
-     *            in="query"
-     *       ),
-     *     @OA\Response(response="200", description="successful operation"),
-     *     @OA\Response(response="401", description="unautharize"),
-     *     @OA\Response(response="403", description="forbidden operation"),
-     *     @OA\Response(response="404", description="user not found"),
-     *     @OA\Response(response="422", description="unprocessable entity")
-     * )
-     */
     public function destroy(Request $request, $id)
     {
         $user = User::all()->where('id', $id)->first();
