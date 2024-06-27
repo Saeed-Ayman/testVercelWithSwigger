@@ -14,8 +14,8 @@ class UserController extends Controller
 {
     /**
      * @OA\Get(
-     *     path="/api/test",
-     *     tags={"test"},
+     *     path="/api/users",
+     *     tags={"users"},
      *     summary="get all users",
      *     operationId="index",
      *     @OA\Response(response="200", description="get all users.")
@@ -28,8 +28,8 @@ class UserController extends Controller
 
     /**
      * @OA\Get(
-     *     path="/api/test/{id}",
-     *     tags={"test"},
+     *     path="/api/users/{id}",
+     *     tags={"users"},
      *     summary="show user",
      *     operationId="show",
      *     @OA\Parameter(
@@ -60,8 +60,8 @@ class UserController extends Controller
 
     /**
      * @OA\Post(
-     *     path="/api/test",
-     *     tags={"test"},
+     *     path="/api/users",
+     *     tags={"users"},
      *     summary="create user",
      *     operationId="store",
      *     @OA\Parameter(
@@ -103,8 +103,8 @@ class UserController extends Controller
 
     /**
      * @OA\Put(
-     *     path="/api/test/{id}",
-     *     tags={"test"},
+     *     path="/api/users/{id}",
+     *     tags={"users"},
      *     summary="edit user data",
      *     operationId="update",
      *     @OA\Parameter(
@@ -163,8 +163,8 @@ class UserController extends Controller
 
     /**
      * @OA\Delete(
-     *     path="/api/test/{id}",
-     *     tags={"test"},
+     *     path="/api/users/{id}",
+     *     tags={"users"},
      *     summary="remove user",
      *     operationId="destroy",
      *     @OA\Parameter(
